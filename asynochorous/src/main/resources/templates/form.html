@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.min.js"></script>
+</head>
+<body>
+<form action="post" onsubmit="f()">
+    <p>
+        <span>用户</span><input type="text" id="username" name="username">
+    </p>
+    <p>
+        <span>密码</span><input type="password" id="password" name="password">
+    </p>
+    <button type="submit" onclick="f()">提交</button>
+</form>
+
+<script>
+    function f(){
+        var uname = document.getElementById('username')
+        var pwd = document.getElementById('password')
+        pwd.value = md5(pwd.value)
+        console.log(uname.value)
+        console.log(pwd.value)
+        // 如果表单效验失败则return false 就可以阻止提交
+    }
+
+</script>
+</body>
+</html>
